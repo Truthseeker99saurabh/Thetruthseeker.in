@@ -11,15 +11,19 @@
          align-items: flex-start;
          justify-contant: space-between;
          padding: 20px 30px;
+         gap: 20px;
    }
    .banner {
       height: 200px;
-      width: auto;
+      flex: 1;
+      min-width: 0;
+      object-fit: fill;
    }
    .logo {
       width: 200px;
       height: 200px;
       object-fit: contain;
+      flex-shrink: 0;
    }
    </style>   
 </head> 
