@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>The Truth Seeker</title>
 
 <style>
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    background-color: #FFF9EF;
-    border: 6px solid #FFD700;
-    box-sizing: border-box;
+    background: #FFF9EF;
+    color: #21170f;
+    font-family: Georgia, serif;
+    border: 6px solid #B8860B;
     min-height: 100vh;
 }
+
+/* TOP HEADER */
 
 .top-section {
     display: flex;
@@ -21,7 +31,7 @@ body {
 }
 
 .banner {
-    height: 200px;
+    height: 180px;
     flex: 1;
     min-width: 0;
     object-fit: fill;
@@ -29,53 +39,589 @@ body {
 
 .logo {
     width: 200px;
-    height: 200px;
+    height: 180px;
     object-fit: contain;
     flex-shrink: 0;
 }
 
-.navbar {
-    background-color: #07192d;
-    padding: 15px;
-    text-align: center;
+/* NAVIGATION */
+
+nav {
+    background: #07182c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 3px solid #B8860B;
+    border-bottom: 3px solid #B8860B;
 }
 
-.navbar a {
+nav a {
     color: white;
     text-decoration: none;
-    margin: 0 20px;
+    padding: 16px 24px;
     font-weight: bold;
 }
 
-</style>
+nav a:hover {
+    background: #B8860B;
+}
 
+/* MAIN CONTENT */
+
+.container {
+    width: 95%;
+    margin: 20px auto;
+}
+
+/* FEATURED */
+
+.featured {
+    display: flex;
+    border: 2px solid #B8860B;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fffaf0;
+}
+
+.featured-image {
+    width: 50%;
+    min-height: 350px;
+    background: #d7b36a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.featured-content {
+    width: 50%;
+    padding: 35px;
+}
+
+.featured-content h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.gold {
+    color: #9b6500;
+}
+
+.tag {
+    display: inline-block;
+    background: #07182c;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+button {
+    background: #07182c;
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* LOWER AREA */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* RESEARCH */
+
+.research-section,
+.sidebar-box {
+    border: 1px solid #B8860B;
+    border-radius: 10px;
+    background: #fffaf0;
+    padding: 20px;
+}
+
+.section-title {
+    border-bottom: 2px solid #B8860B;
+    padding-bottom: 10px;
+}
+
+.article {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #c8a96b;
+}
+
+.article-image {
+    width: 220px;
+    height: 130px;
+    background: #b98b45;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.article h2 {
+    margin-top: 0;
+}
+
+/* SIDEBAR */
+
+.sidebar-box {
+    margin-bottom: 20px;
+}
+
+.topic {
+    padding: 14px 5px;
+    border-bottom: 1px solid #d4bd8a;
+    font-weight: bold;
+}
+
+.search-box {
+    display: flex;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px;
+}
+
+.search-box button {
+    padding: 12px 18px;
+}
+
+/* EVIDENCE BANNER */
+
+.evidence {
+    margin-top: 20px;
+    background: #07182c;
+    color: white;
+    padding: 30px;
+    border: 3px solid #B8860B;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.evidence h2 {
+    color: #FFD700;
+}
+
+/* FEATURES */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 20px;
+    border: 1px solid #B8860B;
+}
+
+.feature {
+    padding: 25px;
+    text-align: center;
+    border-right: 1px solid #B8860B;
+}
+
+/* FOOTER */
+
+footer {
+    background: #07182c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+
+    .top-section {
+        flex-direction: column;
+    }
+
+    .banner {
+        width: 100%;
+        height: auto;
+    }
+
+    .featured {
+        flex-direction: column;
+    }
+
+    .featured-image,
+    .featured-content {
+        width: 100%;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article {
+        flex-direction: column;
+    }
+
+    .article-image {
+        width: 100%;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <div class="top-section">
 
-    <img class="banner" src="banner.png">
+<img class="banner" src="banner.png">
 
-    <img class="logo" src="Logo.png">
+<img class="logo" src="Logo.png">
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="#">⌂ HOME</a>
+
+<a href="#">ANCIENT HISTORY</a>
+
+<a href="#">BUDDHISM</a>
+
+<a href="#">MYSTERIES</a>
+
+<a href="#">FACT CHECK</a>
+
+<a href="#">ARCHIVE</a>
+
+<a href="#">⌕</a>
+
+</nav>
+
+
+<div class="container">
+
+
+<!-- FEATURED ARTICLE -->
+
+<section class="featured">
+
+<div class="featured-image">
+
+ANCIENT HISTORY IMAGE
 
 </div>
 
-<div class="navbar">
 
-    <a href="#">HOME</a>
+<div class="featured-content">
 
-    <a href="#">ANCIENT HISTORY</a>
+<span class="tag">★ FEATURED RESEARCH</span>
 
-    <a href="#">BUDDHISM</a>
+<h1>
 
-    <a href="#">MYSTERIES</a>
+Was <span class="gold">History</span> Really<br>
 
-    <a href="#">FACT CHECK</a>
+What We Were Told?
 
-    <a href="#">ARCHIVE</a>
+</h1>
+
+<p>
+
+Exploring suppressed facts, hidden records and archaeological
+evidence that challenge mainstream narratives.
+
+Truth is not in textbooks, it is in research.
+
+</p>
+
+<p>
+
+Ancient India &nbsp; | &nbsp;
+
+Archaeological Evidence &nbsp; | &nbsp;
+
+8 min read
+
+</p>
+
+<button>READ FULL RESEARCH →</button>
 
 </div>
+
+</section>
+
+
+
+<div class="content-grid">
+
+
+<!-- LEFT SIDE -->
+
+<section class="research-section">
+
+<h2 class="section-title">
+
+✥ LATEST RESEARCH
+
+</h2>
+
+
+<div class="article">
+
+<div class="article-image"></div>
+
+<div>
+
+<h2>The Lost Universities of Ancient India</h2>
+
+<p>
+
+Nalanda, Takshashila and Vikramshila were not just centers
+of education but the greatest universities of the ancient world.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="article">
+
+<div class="article-image"></div>
+
+<div>
+
+<h2>Buddha: More Than a Spiritual Leader</h2>
+
+<p>
+
+Beyond religion and mythology, understanding the real life,
+teachings and revolution brought by Buddha.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="article">
+
+<div class="article-image"></div>
+
+<div>
+
+<h2>Ancient Texts, Real or Interpolated?</h2>
+
+<p>
+
+A critical study of ancient scriptures and the possibility
+of later additions that changed our understanding of history.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="article">
+
+<div class="article-image"></div>
+
+<div>
+
+<h2>Mysteries of the Indus Valley Civilization</h2>
+
+<p>
+
+Advanced city planning, mysterious script and sudden decline —
+there is more to the story than we have been told.
+
+</p>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- RIGHT SIDE -->
+
+<aside>
+
+
+<div class="sidebar-box">
+
+<h2 class="section-title">
+
+✥ EXPLORE TOPICS ✥
+
+</h2>
+
+<div class="topic">🏛 Ancient History →</div>
+
+<div class="topic">☸ Buddhism →</div>
+
+<div class="topic">Archaeology →</div>
+
+<div class="topic">Historical Mysteries →</div>
+
+<div class="topic">Lost Civilizations →</div>
+
+<div class="topic">Myths vs Facts →</div>
+
+<div class="topic">Great Personalities →</div>
+
+</div>
+
+
+
+<div class="sidebar-box">
+
+<h2>SEARCH ARCHIVE</h2>
+
+<div class="search-box">
+
+<input placeholder="Search articles, topics, evidence...">
+
+<button>⌕</button>
+
+</div>
+
+</div>
+
+
+
+<div class="sidebar-box">
+
+<h2>POPULAR ARTICLES</h2>
+
+<p>① Who Wrote Our History?</p>
+
+<p>② The Untold Story of Ashoka</p>
+
+<p>③ Secrets of Ancient Temples</p>
+
+<p>④ Hidden Maps of Ancient World</p>
+
+<p>⑤ Real Facts About Mahabharata</p>
+
+</div>
+
+
+</aside>
+
+
+</div>
+
+
+
+<!-- EVIDENCE -->
+
+<section class="evidence">
+
+<h2>Evidence Never Lies</h2>
+
+<p>
+
+We dig into history, analyze the facts and present
+the truth with references.
+
+</p>
+
+<button>EXPLORE EVIDENCE ARCHIVE →</button>
+
+</section>
+
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+
+<div class="feature">
+
+<h3>🛡 EVIDENCE BASED</h3>
+
+<p>We rely on facts not fiction.</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>📖 REFERENCED SOURCES</h3>
+
+<p>Every claim is backed by references.</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>🔍 CRITICAL ANALYSIS</h3>
+
+<p>We question, analyze and then conclude.</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>⚖ TRUTH ABOVE ALL</h3>
+
+<p>Our only goal is the truth.</p>
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+<footer>
+
+© 2026 The Truth Seeker &nbsp; | &nbsp;
+
+Reality Over Illusion
+
+<br><br>
+
+About Us &nbsp; | &nbsp;
+
+Contact &nbsp; | &nbsp;
+
+Privacy Policy &nbsp; | &nbsp;
+
+Terms
+
+</footer>
+
 
 </body>
+
 </html>
