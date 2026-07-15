@@ -30,6 +30,31 @@
       object-fit: contain;
       flex-shrink: 0;
    }
+   .main-nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
+    background:#111522;
+    border-top:3px solid #D4AF37;
+    border-bottom:3px solid #D4AF37;
+    padding:15px 25px;
+}
+.main-nav a{
+    color:#fff;
+    text-decoration:none;
+    font-family:Georgia,serif;
+    font-size:18px;
+    font-weight:bold;
+}
+.main-nav a:hover{
+    color:#D4AF37;
+}
+.main-nav .search{
+    margin-left:auto;
+    color:#D4AF37;
+    font-size:28px;
+}
    </style>   
 </head> 
   <body> 
@@ -37,5 +62,14 @@
    <img class="banner" src="banner.png">
    <img class="logo" src="Logo.png">
 </div>
-  </body>
-  </html>
+<nav class="main-nav">
+    <a href="#">🏠 HOME</a>
+    <a href="#">ANCIENT HISTORY</a>
+    <a href="#">BUDDHISM</a>
+    <a href="#">MYSTERIES</a>
+    <a href="#">FACT CHECK</a>
+    <a href="#">ARCHIVE</a>
+    <a href="#" class="search">🔍</a>
+</nav>
+</body>
+</html>    
